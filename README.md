@@ -70,6 +70,8 @@ Planned in the near future:
 
 # Custom Matching Rules
 
+It is possible to write and register custom matching rules based on regular expression and capturing group mapping. This feature allows to handle specific cases like trade message, map exchange or bulk purchase templates.
+
 ```csharp
 INotificationMatch notificaionMatch = new NotificationMatch
 (
