@@ -17,11 +17,11 @@ namespace PathOfExile.GameClient.Monitor.DependencyInjection
             DefaultNotificationMatching.TextNotificationMatch
         };
 
-        public static IServiceCollection AddGameClientMonitor(this IServiceCollection services, Action<GameClientMonitorConfiguration> configure)
+        public static IServiceCollection AddGameClientMonitor(this IServiceCollection services, Action<GameClientMonitorConfiguration> configure = null)
         {
             GameClientMonitorConfiguration configuration = new GameClientMonitorConfiguration();
 
-            configure(configuration);
+            configure?.Invoke(configuration);
 
             if (configuration == null)
             {
