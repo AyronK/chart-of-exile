@@ -28,7 +28,7 @@ using(IServiceProvider serviceProvider = services.BuildServiceProvider())
         // handle required case
         if(args.Notification is AfkNotification afkNotification)
         {
-            Console.WriteLine(afkNotification.IsActive ? "Hey wake up!" : "AFK disabled", MatToastType.Warning);
+            Console.WriteLine(afkNotification.IsActive ? "Hey wake up!" : "AFK disabled");
         }
     }
 }
