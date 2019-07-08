@@ -1,4 +1,4 @@
-# Watchers Eye
+# Watcher's Eye
 
 [![Build and Test](https://gitlab.com/ayronk-path-of-exile/watchers-eye/badges/master/pipeline.svg)](https://gitlab.com/ayronk-path-of-exile/watchers-eye/commits/master)
 
