@@ -1,5 +1,7 @@
 # Watchers Eye
 
+[![Build and Test](https://gitlab.com/ayronk-path-of-exile/watchers-eye/badges/master/pipeline.svg)](https://gitlab.com/ayronk-path-of-exile/watchers-eye/commits/master)
+
 .NET Standard 2.0 library for tracking and processing Path of Exile log file.
 
 # Usage
