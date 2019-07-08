@@ -13,7 +13,6 @@ build:
         - "dotnet build"
     only:
     - merge_requests
-    - master
     - develop
     
 test:
@@ -22,5 +21,4 @@ test:
         - "dotnet test"
     only:
     - merge_requests
-    - master
     - develop
