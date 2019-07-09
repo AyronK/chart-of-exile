@@ -1,5 +1,7 @@
 # Watcher's Eye
 
+## version `0.1.0a`
+
 **master**  
 [![master](https://gitlab.com/ayronk-path-of-exile/watchers-eye/badges/master/pipeline.svg)](https://gitlab.com/ayronk-path-of-exile/watchers-eye/commits/master)  
 **develop**  
@@ -62,9 +64,11 @@ services.AddGameClientMonitor(config =>
 - Area enter - location name
 - AFK on/off - is enabled
 - Level up - login, level
+- Chat Message - 
+   - Local, Global, Trade, Guild, Party, Whisper
+- Player joined/left the area
 
 Planned in the near future:
-- chat messages (global, trade, pm etc.)
 - NPC dialoges (chat messages with additional filter on constant names)
 - error notifications with additional filter for "Disconnected from server"
 
