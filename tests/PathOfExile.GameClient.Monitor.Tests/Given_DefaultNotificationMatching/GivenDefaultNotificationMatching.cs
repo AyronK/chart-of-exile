@@ -30,5 +30,10 @@ namespace PathOfExile.GameClient.Monitor.Tests.Given_DefaultNotificationMatching
         {
             NotificationMatch = DefaultNotificationMatching.AreaEnterNotificationMatch;
         }
+
+        protected void With_PlayerInAreaNotificationMatch()
+        {
+            NotificationMatch = DefaultNotificationMatching.PlayerInAreaNotificationMatch;
+        }
     }
 }
