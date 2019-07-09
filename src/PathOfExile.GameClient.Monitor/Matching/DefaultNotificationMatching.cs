@@ -31,6 +31,12 @@ namespace PathOfExile.GameClient.Monitor.Matching
                 new LevelUpNotification(groups[1].Value, short.Parse(groups[2].Value), metadata)
         );
 
+        internal static INotificationMatch PlayerInAreaNotificationMatch { get; } = new NotificationMatch
+        (
+            regex: new Regex(@": ([\p{L}\p{Nd}]+) has (joined|left) the area."),
+            onMap: (groups, metadata) => new PlayerInAreaNotification(groups[1].Value, groups[2].Value == "joined" ? PlayerAreaAction.Join : PlayerAreaAction.Leave, metadata)
+        );
+
         internal static INotificationMatch ChatMessageNotificationMatch { get; } = new NotificationMatch
         (
             regex: new Regex(@"([#$%&]|@From |@To )?(?:<([\p{L}\p{Nd}]+)> )?([\p{L}\p{Nd}]+): (.*)"),
