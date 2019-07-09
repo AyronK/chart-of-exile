@@ -16,6 +16,11 @@ namespace PathOfExile.GameClient.Monitor.Tests.Given_DefaultNotificationMatching
             NotificationMatch = DefaultNotificationMatching.AfkNotificationMatch;
         }
 
+        protected void With_ChatMessageNotificationMatch()
+        {
+            NotificationMatch = DefaultNotificationMatching.ChatMessageNotificationMatch;
+        }
+
         protected void With_LevelUpNotificationMatch()
         {
             NotificationMatch = DefaultNotificationMatching.LevelUpNotificationMatch;
@@ -24,6 +29,11 @@ namespace PathOfExile.GameClient.Monitor.Tests.Given_DefaultNotificationMatching
         protected void With_AreaEnterNotificationMatch()
         {
             NotificationMatch = DefaultNotificationMatching.AreaEnterNotificationMatch;
+        }
+
+        protected void With_PlayerInAreaNotificationMatch()
+        {
+            NotificationMatch = DefaultNotificationMatching.PlayerInAreaNotificationMatch;
         }
     }
 }

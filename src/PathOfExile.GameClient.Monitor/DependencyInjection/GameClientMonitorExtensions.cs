@@ -14,7 +14,9 @@ namespace PathOfExile.GameClient.Monitor.DependencyInjection
             DefaultNotificationMatching.AfkNotificationMatch,
             DefaultNotificationMatching.AreaEnterNotificationMatch,
             DefaultNotificationMatching.LevelUpNotificationMatch,
-            DefaultNotificationMatching.TextNotificationMatch
+            DefaultNotificationMatching.ChatMessageNotificationMatch,
+            DefaultNotificationMatching.PlayerInAreaNotificationMatch,
+            DefaultNotificationMatching.TextNotificationMatch,
         };
 
         public static IServiceCollection AddGameClientMonitor(this IServiceCollection services, Action<GameClientMonitorConfiguration> configure = null)
