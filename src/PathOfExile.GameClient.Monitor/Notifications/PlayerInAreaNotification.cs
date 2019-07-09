@@ -2,16 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using PathOfExile.GameClient.Monitor.Notifications.Abstraction;
+using PathOfExile.GameClient.Monitor.Notifications.Constants;
 using PathOfExile.GameClient.Monitor.Notifications.Metadata;
 
 namespace PathOfExile.GameClient.Monitor.Notifications
 {
-    public enum PlayerAreaAction
-    {
-        Join,
-        Leave,
-    }
-
     public class PlayerInAreaNotification : BaseNotification
     {
         public string Player { get; }

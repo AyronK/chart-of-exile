@@ -1,4 +1,4 @@
-﻿namespace PathOfExile.GameClient.Monitor.Notifications
+﻿namespace PathOfExile.GameClient.Monitor.Notifications.Constants
 {
     public enum ChatChannel
     {

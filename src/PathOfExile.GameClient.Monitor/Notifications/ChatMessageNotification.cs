@@ -1,19 +1,9 @@
 ﻿using PathOfExile.GameClient.Monitor.Notifications.Abstraction;
+using PathOfExile.GameClient.Monitor.Notifications.Constants;
 using PathOfExile.GameClient.Monitor.Notifications.Metadata;
 
 namespace PathOfExile.GameClient.Monitor.Notifications
 {
-    public enum ChatChannel
-    {
-        Local,
-        Global,
-        Trade,
-        Guild,
-        WhisperTo,
-        WhisperFrom,
-        Party
-    }
-
     public sealed class ChatMessageNotification : BaseNotification
     {
         public string Player { get; }

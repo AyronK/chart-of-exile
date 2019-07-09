@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using PathOfExile.GameClient.Monitor.Notifications;
+using PathOfExile.GameClient.Monitor.Notifications.Constants;
 
 namespace PathOfExile.GameClient.Monitor.Tests.Given_DefaultNotificationMatching.When
 {

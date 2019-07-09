@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using PathOfExile.GameClient.Monitor.Notifications;
+using PathOfExile.GameClient.Monitor.Notifications.Constants;
 
 namespace PathOfExile.GameClient.Monitor.Matching
 {
