@@ -3,18 +3,20 @@ using PathOfExile.GameClient.Monitor.Notifications.Metadata;
 
 namespace PathOfExile.GameClient.Monitor.Notifications
 {
-    public class LevelUpNotification : PlayerNotification
+    public class LevelUpNotification : BaseNotification
     {
-        public LevelUpNotification(string targetNickname, short level,  LogMetadata metadata) : base(targetNickname, metadata)
+        public LevelUpNotification(string player, short level,  LogMetadata metadata) : base(metadata)
         {
+            Player = player;
             Level = level;
         }
 
+        public string Player { get; }
         public short Level { get; }
 
         public override bool Equals(object obj)
         {
-            return base.Equals(obj) && obj is LevelUpNotification other && other.Level == Level;
+            return base.Equals(obj) && obj is LevelUpNotification other && other.Level == Level && other.Player == Player;
         }
 
         public override int GetHashCode()

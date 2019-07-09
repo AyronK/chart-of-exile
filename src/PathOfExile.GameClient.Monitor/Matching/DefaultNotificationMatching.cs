@@ -1,5 +1,7 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using PathOfExile.GameClient.Monitor.Notifications;
+using PathOfExile.GameClient.Monitor.Notifications.Constants;
 
 namespace PathOfExile.GameClient.Monitor.Matching
 {
@@ -25,8 +27,44 @@ namespace PathOfExile.GameClient.Monitor.Matching
 
         internal static INotificationMatch LevelUpNotificationMatch { get; } = new NotificationMatch
         (
-            regex: new Regex(@": (.*) \(.*\) is now level (\d*)"),
-            onMap: (groups, metadata) => new LevelUpNotification(groups[1].Value, short.Parse(groups[2].Value), metadata)
+            regex: new Regex(@": ([\p{L}\p{Nd}]+) \(\w+\) is now level (\d*)"),
+            onMap: (groups, metadata) =>
+                new LevelUpNotification(groups[1].Value, short.Parse(groups[2].Value), metadata)
         );
+
+        internal static INotificationMatch PlayerInAreaNotificationMatch { get; } = new NotificationMatch
+        (
+            regex: new Regex(@": ([\p{L}\p{Nd}]+) has (joined|left) the area."),
+            onMap: (groups, metadata) => new PlayerInAreaNotification(groups[1].Value, groups[2].Value == "joined" ? PlayerAreaAction.Join : PlayerAreaAction.Leave, metadata)
+        );
+
+        internal static INotificationMatch ChatMessageNotificationMatch { get; } = new NotificationMatch
+        (
+            regex: new Regex(@"([#$%&]|@From |@To )?(?:<([\p{L}\p{Nd}]+)> )?([\p{L}\p{Nd}]+): (.*)"),
+            onMap: (groups, metadata) => new ChatMessageNotification(ParseChannel(groups[1].Value.Trim()), groups[3].Value, groups[2].Value, groups[4].Value, metadata)
+        );
+
+        private static ChatChannel ParseChannel(string text)
+        {
+            switch (text)
+            {
+                case "":
+                    return ChatChannel.Local;
+                case "#":
+                    return ChatChannel.Global;
+                case "%":
+                    return ChatChannel.Party;
+                case "$":
+                    return ChatChannel.Trade;
+                case "&":
+                    return ChatChannel.Guild;
+                case "@From":
+                    return ChatChannel.WhisperFrom;
+                case "@To":
+                    return ChatChannel.WhisperTo;
+                default:
+                    throw new NotSupportedException($"{text} is not supported chat message channel.");
+            }
+        }
     }
 }
