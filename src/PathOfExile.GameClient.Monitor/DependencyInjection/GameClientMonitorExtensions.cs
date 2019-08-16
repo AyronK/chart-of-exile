@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using PathOfExile.GameClient.Monitor.LogTracing;
@@ -14,9 +15,17 @@ namespace PathOfExile.GameClient.Monitor.DependencyInjection
             DefaultNotificationMatching.AfkNotificationMatch,
             DefaultNotificationMatching.AreaEnterNotificationMatch,
             DefaultNotificationMatching.LevelUpNotificationMatch,
+            DefaultNotificationMatching.KitavasAfflictionNotificationMatch,
             DefaultNotificationMatching.ChatMessageNotificationMatch,
             DefaultNotificationMatching.PlayerInAreaNotificationMatch,
             DefaultNotificationMatching.TextNotificationMatch,
+        };
+
+        private static readonly INotificationMatch[] TradeMatchings =
+        {
+            DefaultNotificationMatching.TradeNotificationMatch,
+            DefaultNotificationMatching.BulkTradeNotificationMatch,
+            DefaultNotificationMatching.MapExchangeNotificationMatch,
         };
 
         public static IServiceCollection AddGameClientMonitor(this IServiceCollection services, Action<GameClientMonitorConfiguration> configure = null)
@@ -65,9 +74,14 @@ namespace PathOfExile.GameClient.Monitor.DependencyInjection
                 RegisterMatchings(configuration, notificationMonitor);
             }
 
+            if (configuration.UseTradeMatchings)
+            {
+                RegisterTradeMatchings(TradeMatchings, configuration, notificationMonitor);
+            }
+
             if (configuration.UseDefaultMatchings)
             {
-                RegisterDefaultMatchings(configuration, notificationMonitor);
+                RegisterTradeMatchings(DefaultMatchings, configuration, notificationMonitor);
             }
 
             return notificationMonitor;
@@ -81,9 +95,9 @@ namespace PathOfExile.GameClient.Monitor.DependencyInjection
             }
         }
 
-        private static void RegisterDefaultMatchings(GameClientMonitorConfiguration configuration, NotificationMonitor notificationMonitor)
+        private static void RegisterTradeMatchings(IEnumerable<INotificationMatch> matchings, GameClientMonitorConfiguration configuration, NotificationMonitor notificationMonitor)
         {
-            foreach (INotificationMatch notificationMatch in DefaultMatchings)
+            foreach (INotificationMatch notificationMatch in matchings)
             {
                 if (!configuration.NotificationMatches?.Contains(notificationMatch) ?? false)
                 {

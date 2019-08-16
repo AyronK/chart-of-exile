@@ -1,3 +1,9 @@
+## 0.1.1a
+
+##### features
+- Implemented matching for trade templates based on poe.trade and map exchange services
+- Implemented matching for Kitavas Affliction (resistatnce penalty)
+
 ## 0.1.0a
 
 ##### features
