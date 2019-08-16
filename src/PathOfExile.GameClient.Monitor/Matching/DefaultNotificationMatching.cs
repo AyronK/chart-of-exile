@@ -98,6 +98,12 @@ namespace PathOfExile.GameClient.Monitor.Matching
                 metadata)
         );
 
+        internal static INotificationMatch KitavasAfflictionNotificationMatch { get; } = new NotificationMatch
+        (
+            regex: new Regex(@": You have been permanently weakened by Kitava's (\w*) affliction. You now have -(\d*)% to all Resistances."),
+            onMap: (groups, metadata) => new KitavasAfflictionNotification(groups[1].Value, int.Parse(groups[2].Value), metadata)
+        );
+
         private static ChatChannel ParseChannel(string text)
         {
             switch (text)

@@ -68,6 +68,7 @@ services.AddGameClientMonitor(config =>
    - Local, Global, Trade, Guild, Party, Whisper
 - Player joined/left the area
 - Trade templates based on poe.trade and map exchange services
+- Kitavas Affliction (resistatnce penalty)
 
 Planned in the near future:
 - NPC dialoges (chat messages with additional filter on constant names)
