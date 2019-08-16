@@ -35,5 +35,20 @@ namespace PathOfExile.GameClient.Monitor.Tests.Given_DefaultNotificationMatching
         {
             NotificationMatch = DefaultNotificationMatching.PlayerInAreaNotificationMatch;
         }
+
+        protected void With_TradeNotificationMatch()
+        {
+            NotificationMatch = DefaultNotificationMatching.TradeNotificationMatch;
+        }
+
+        protected void With_BulkTradeNotificationMatch()
+        {
+            NotificationMatch = DefaultNotificationMatching.BulkTradeNotificationMatch;
+        }
+
+        protected void With_MapExchangeNotificationMatch()
+        {
+            NotificationMatch = DefaultNotificationMatching.MapExchangeNotificationMatch;
+        }
     }
 }
