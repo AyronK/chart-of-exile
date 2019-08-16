@@ -15,6 +15,7 @@ namespace PathOfExile.GameClient.Monitor.DependencyInjection
             DefaultNotificationMatching.AfkNotificationMatch,
             DefaultNotificationMatching.AreaEnterNotificationMatch,
             DefaultNotificationMatching.LevelUpNotificationMatch,
+            DefaultNotificationMatching.KitavasAfflictionNotificationMatch,
             DefaultNotificationMatching.ChatMessageNotificationMatch,
             DefaultNotificationMatching.PlayerInAreaNotificationMatch,
             DefaultNotificationMatching.TextNotificationMatch,

@@ -27,7 +27,7 @@ namespace PathOfExile.GameClient.Monitor.Tests.Given_DefaultNotificationMatching
         protected void Then_Notification(INotification expected)
         {
             when.Result.Notification.Should().NotBeNull();
-            when.Result.Notification.Should().Be(expected);
+            when.Result.Notification.Should().BeEquivalentTo(expected);
         }
     }
 }
