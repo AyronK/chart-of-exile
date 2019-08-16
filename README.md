@@ -1,6 +1,6 @@
 # Watcher's Eye
 
-## version `0.1.0a`
+## version `0.1.1a`
 
 **master**  
 [![master](https://gitlab.com/ayronk-path-of-exile/watchers-eye/badges/master/pipeline.svg)](https://gitlab.com/ayronk-path-of-exile/watchers-eye/commits/master)  
@@ -67,6 +67,7 @@ services.AddGameClientMonitor(config =>
 - Chat Message - 
    - Local, Global, Trade, Guild, Party, Whisper
 - Player joined/left the area
+- Trade templates based on poe.trade and map exchange services
 
 Planned in the near future:
 - NPC dialoges (chat messages with additional filter on constant names)

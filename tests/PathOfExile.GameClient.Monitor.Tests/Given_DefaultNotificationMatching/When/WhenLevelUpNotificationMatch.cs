@@ -24,7 +24,7 @@ namespace PathOfExile.GameClient.Monitor.Tests.Given_DefaultNotificationMatching
         [TestCase("Connect time to instance server was 32ms")]
         public void And_IsNotMatch(string messageText)
         {
-            With_AreaEnterNotificationMatch();
+            With_LevelUpNotificationMatch();
 
             NotificationText = $"{DefaultLogMetadataText} {messageText}";
 
