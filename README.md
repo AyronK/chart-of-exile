@@ -1,13 +1,6 @@
-# Watcher's Eye
+# Chart of Exile
 
 ## version `0.1.1a`
-
-**master**  
-[![master](https://gitlab.com/ayronk-path-of-exile/watchers-eye/badges/master/pipeline.svg)](https://gitlab.com/ayronk-path-of-exile/watchers-eye/commits/master)  
-**develop**  
-[![develop](https://gitlab.com/ayronk-path-of-exile/watchers-eye/badges/master/pipeline.svg)](https://gitlab.com/ayronk-path-of-exile/watchers-eye/commits/develop)  
-
-.NET Standard 2.0 library for tracking and processing Path of Exile log file.
 
 # Usage
 

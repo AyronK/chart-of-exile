@@ -24,4 +24,3 @@
     - Default matching
     - Stop matching one first handled
     - Custom matchings
-

@@ -7,6 +7,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PathOfExile.GameClient.Moni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PathOfExile.GameClient.Monitor.Tests", "tests\PathOfExile.GameClient.Monitor.Tests\PathOfExile.GameClient.Monitor.Tests.csproj", "{C3B56CEC-D378-44FC-A70B-3CB2D73FEA5E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{F4E64BF9-C68F-490A-A0F8-10346EEDC920}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
+		CONTRIBUTING.md = CONTRIBUTING.md
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{D3F3ECB4-F8A2-4B1C-9F12-1E2AD00BF1E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,5 +37,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6AB7535D-5EE9-48AC-B5A3-68C83F6CA623}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D3F3ECB4-F8A2-4B1C-9F12-1E2AD00BF1E3} = {F4E64BF9-C68F-490A-A0F8-10346EEDC920}
 	EndGlobalSection
 EndGlobal
